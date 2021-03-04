@@ -8,7 +8,7 @@ import {MaterialModule} from './lib/material/material.module';
 import { HeaderComponent } from './shared/header/header.component';
 import { LoginFormComponent } from './auth/components/login-form/login-form.component';
 import { AuthenticationComponent } from './auth/pages/authentication/authentication.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PrivateComponent } from './private/private.component';
 import { UserProfileComponent } from './private/user-profile/user-profile.component';
 import { UserDetailsComponent } from './private/user-profile/user-details/user-details.component';
@@ -23,6 +23,7 @@ import { DialogBoxPostsComponent } from './private/posts/dialog-box-posts/dialog
 import {HttpClientModule} from '@angular/common/http';
 import { PostItemComponent } from './private/posts/post-item/post-item.component';
 import { AlbumItemComponent } from './private/albums/album-item/album-item/album-item.component';
+import {AuthService} from './auth/services/auth.service';
 
 
 @NgModule({
@@ -45,16 +46,17 @@ import { AlbumItemComponent } from './private/albums/album-item/album-item/album
     AlbumItemComponent
   ],
   entryComponents: [DialogBoxPostsComponent, DialogBoxAlbumComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    HttpClientModule,
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        HttpClientModule,
+        FormsModule,
+    ],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
