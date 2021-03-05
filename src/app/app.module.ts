@@ -19,11 +19,11 @@ import { CompletedComponent } from './private/user-profile/todo-list/completed/c
 import {MatDialogModule} from '@angular/material/dialog';
 import { NotCompletedComponent } from './private/user-profile/todo-list/not-completed/not-completed.component';
 import { DialogBoxAlbumComponent } from './private/albums/dialog-box-album/dialog-box-album.component';
-import { DialogBoxPostsComponent } from './private/posts/dialog-box-posts/dialog-box-posts.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PostItemComponent } from './private/posts/post-item/post-item.component';
 import { AlbumItemComponent } from './private/albums/album-item/album-item/album-item.component';
 import {AuthService} from './auth/services/auth.service';
+import { DialogBoxPostsComponent } from './private/posts/dialog-box/dialog-box-posts/dialog-box-posts.component';
 
 
 @NgModule({
@@ -41,9 +41,9 @@ import {AuthService} from './auth/services/auth.service';
     CompletedComponent,
     NotCompletedComponent,
     DialogBoxAlbumComponent,
-    DialogBoxPostsComponent,
     PostItemComponent,
-    AlbumItemComponent
+    AlbumItemComponent,
+    DialogBoxPostsComponent
   ],
   entryComponents: [DialogBoxPostsComponent, DialogBoxAlbumComponent],
     imports: [
