@@ -11,8 +11,8 @@
         {{user.address?.suite}},
         {{user.address?.city}},
         {{user.address?.zipcode}},
-        {{user.address?.geo.lat}},
-        {{user.address?.geo.lng}}
+        {{user.address!.geo.lat}},
+        {{user.address!.geo.lng}}
       </li>
       <li>Phone: {{user.phone}}</li>
       <li>Website: {{user.website}}</li>

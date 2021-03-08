@@ -6,6 +6,7 @@ import {UserProfileComponent} from './private/user-profile/user-profile.componen
 import {PostsComponent} from './private/posts/posts.component';
 import {AlbumsComponent} from './private/albums/albums.component';
 import {CompletedComponent} from './private/user-profile/todo-list/completed/completed.component';
+import {NotCompletedComponent} from './private/user-profile/todo-list/not-completed/not-completed.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticationComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'completed', component: CompletedComponent },
+  { path: 'not-completed', component: NotCompletedComponent }
 
 ];
 

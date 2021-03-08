@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {Subscription} from 'rxjs';
-import {DialogBoxAlbumComponent} from '../../albums/dialog-box-album/dialog-box-album.component';
 import {Posts} from '../../../interfaces/posts';
 import {PostSubjectService} from '../../../shared/services/post-subject.service';
+import {DialogBoxPostsComponent} from '../dialog-box/dialog-box-posts/dialog-box-posts.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ import {PostSubjectService} from '../../../shared/services/post-subject.service'
 export class PostItemComponent implements OnInit, OnDestroy {
   postSubscription: Subscription;
   post = {} as Posts;
-  // posts: Posts[] = [];
+
 
   constructor(public dialog: MatDialog, private postSubjectService: PostSubjectService) {
     this.postSubscription = this.postSubjectService.getPostData()
@@ -23,12 +23,14 @@ export class PostItemComponent implements OnInit, OnDestroy {
       });
   }
 
-
   ngOnInit(): void {
   }
 
-  onDialogOpen(): void {
-    this.dialog.open(DialogBoxAlbumComponent);
+
+  onDialogOpen(post: any): void {
+    const dialogRef = this.dialog.open(DialogBoxPostsComponent);
+    dialogRef.componentInstance.title = post.title;
+    dialogRef.componentInstance.body = post.body;
   }
 
   ngOnDestroy(): void {

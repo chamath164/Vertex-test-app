@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {Users} from '../../interfaces/users';
 import {Posts} from '../../interfaces/posts';
+import {Albums} from '../../interfaces/albums';
 
 
 @Injectable({
@@ -19,15 +20,11 @@ export class AuthService {
     return this.http.get<Users>(this.baseUrl + `users/${userId}`);
   }
 
-  // public getAllUsers(): Observable<any> {
-  //   return this.http.get(this.baseUrl + 'users');
-  // }
-
   public getPostsById(userId: string): Observable<Posts> {
     return this.http.get<Posts>(this.baseUrl + `posts/${userId}`);
   }
 
-  public getAllAlbums(): Observable<any> {
-    return this.http.get(this.baseUrl + 'albums');
+  public getAlbumsById(userId: string): Observable<any> {
+    return this.http.get<Albums>(this.baseUrl + `albums/${userId}`);
   }
 }

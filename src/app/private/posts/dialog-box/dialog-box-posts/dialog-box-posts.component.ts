@@ -1,4 +1,5 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-box-posts',
@@ -6,8 +7,11 @@ import {Component, Inject, OnInit} from '@angular/core';
   styleUrls: ['./dialog-box-posts.component.scss']
 })
 export class DialogBoxPostsComponent implements OnInit {
+  @Input() post: any;
+  public title!: string;
+  public body!: string;
 
-  constructor() {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit(): void {
